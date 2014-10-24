@@ -1,0 +1,34 @@
+
+What you have
+-------------
+
+A {jetty.base} configured for
+ * 1 connector on port 9090
+ * 1 webapp - hello.war
+
+Goals
+-----
+
+Make sure that the hello.war is deployed successfully.
+
+Access the webapp main page.
+
+http://localhost:9099/hello       (Shows index.html)
+
+Now, try to hit the link for "/world.hello", it should not
+be a 404 error.
+
+Fix it, it only requires some proper jetty.base configuration.
+But which one?
+
+
+Bonus Goal
+----------
+
+Change the context path for hello.war to respond from "/"
+So that the app shows the index.html from
+
+  http://localhost:9090/
+
+There are 2 ways to accomplish this, can you think of both ways?
+
