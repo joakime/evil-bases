@@ -399,7 +399,8 @@ public class DumperServlet extends HttpServlet
 
         try
         {
-            pout.write("<html>\n<body>\n");
+            pout.write("<html>\n");
+            pout.write("<body style='font-family: sans-serif'>\n");
             pout.write("<h1>Dump Servlet</h1>\n");
             pout.write("<table width=\"95%\">");
             pout.write("<tr>\n");
