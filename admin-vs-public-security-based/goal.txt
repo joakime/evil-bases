@@ -9,13 +9,34 @@ A {jetty.base} configured for
    + admin.war  on /admin
    + public.war on /public
 
+the admin.war has the following WEB-INF/web.xml section
+
+  <login-config>
+    <auth-method>BASIC</auth-method>
+    <realm-name>Admin Realm</realm-name>
+  </login-config>
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>Protected Area</web-resource-name>
+      <url-pattern>/*</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>admin</role-name>
+    </auth-constraint>
+  </security-constraint>
+
+
 Goals
 -----
 
-Make sure that /admin has security.
+Make sure that the server can start. (its currently broken)
+Make sure that the /admin webapp has security.
+Make sure that security at server side is properly configured.
 Make sure that add a user called "bob" setup to access /admin
 
-http://localhost:9090/public
+http://localhost:9090/admin     (Requires Auth)
+http://localhost:9090/          (no auth)
+http://localhost:9090/public    (no auth required)
 
 
 Bonus Goal
@@ -24,5 +45,4 @@ Bonus Goal
 If a request arrives on path "/", auto-redirect to "/public"
 
 so that http://localhost:9090/  becomes  http://localhost:9090/public
-    and http://localhost:9099/  becomes  http://localhost:9099/public
 

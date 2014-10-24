@@ -8,7 +8,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>admin</servlet-name>
-    <url-pattern>/admin</url-pattern>
+    <url-pattern>/page</url-pattern>
   </servlet-mapping>
   <login-config>
     <auth-method>BASIC</auth-method>

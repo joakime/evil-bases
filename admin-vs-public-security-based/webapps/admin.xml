@@ -6,12 +6,7 @@
   <Set name="war"><Property name="jetty.webapps"/>/admin.war</Set>
 
   <Get name="securityHandler">
-    <Set name="loginService">
-      <New class="org.eclipse.jetty.security.HashLoginService">
-        <Set name="name">Admin Realm</Set>
-        <Set name="config"><Property name="jetty.base"/>/etc/admin-realm.properties</Set>
-      </New>
-    </Set>
+    <Set name="realmName">Admin Realm</Set>
   </Get>
 
  
