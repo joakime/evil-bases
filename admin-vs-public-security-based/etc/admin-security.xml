@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE Configure PUBLIC "-" "http://www.eclipse.org/jetty/configure_9_0.dtd">
+<Configure id="Server" class="org.eclipse.jetty.server.Server">
+    <Call name="addBean">
+      <Arg>
+        <New class="org.eclipse.jetty.security.HashLoginService">
+          <Set name="name">Test Realm</Set>
+          <Set name="config"><Property name="jetty.base"/>etc/admin-realm.properties</Set>
+          <Set name="refreshInterval">0</Set>
+        </New>
+      </Arg>
+    </Call>
+</Configure>

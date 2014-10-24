@@ -1,0 +1,28 @@
+
+What you have
+-------------
+
+A {jetty.base} configured for
+ * 1 connector
+   + port 9090
+ * 2 webapps
+   + admin.war  on /admin
+   + public.war on /public
+
+Goals
+-----
+
+Make sure that /admin has security.
+Make sure that add a user called "bob" setup to access /admin
+
+http://localhost:9090/public
+
+
+Bonus Goal
+----------
+
+If a request arrives on path "/", auto-redirect to "/public"
+
+so that http://localhost:9090/  becomes  http://localhost:9090/public
+    and http://localhost:9099/  becomes  http://localhost:9099/public
+
