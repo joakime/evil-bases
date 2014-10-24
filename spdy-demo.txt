@@ -1,0 +1,19 @@
+you can find the SPDY demo here:
+
+https://github.com/jetty-project/spdy-demo
+
+1) Clone it.
+2) Make sure you have the right NPN version with the JDK you're using
+in pom.xml.
+3) Build it
+4) mvn jetty:run-forked
+
+mvn run-forked is important, mvn jetty:run won't work.
+
+To make it evident, you need to run the simulate-rountrip.sh script
+(Linux): it slows down the localhost interface to simulate the effects
+of a roundtrip.
+
+Watch the demo to see how I explained and what links to click when.
+
+That should be all.
