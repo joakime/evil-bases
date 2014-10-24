@@ -1,0 +1,21 @@
+
+What you have
+-------------
+
+Two {jetty.base} directories
+ * base-a
+ * base-b
+
+
+Goals
+-----
+
+Run 2 servers (each in their own JVM)
+Make sure that each server starts and can accept requests.
+Make any changes you need to the configuration in the {jetty.base}
+directories to allow both servers to exist at the same time.
+
+Hint: you'll likely see a conflict / error when you start
+the second server, what do you need to do resolve this conflict.
+
+
