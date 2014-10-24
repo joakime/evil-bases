@@ -1,0 +1,29 @@
+
+What you have
+-------------
+
+A {jetty.base} configured for
+ * 1 connector on port 9090
+ * 1 webapp - hello.war
+
+Goals
+-----
+
+Make sure that the hello.war is deployed successfully.
+
+Access the webapp main page.
+
+http://localhost:9099/hello       (Shows index.html)
+
+Now, try to hit the link for "/world.hello", it should not
+be a 404 error.
+
+Now hit http://localhost:9090/hello/cruel.goodbye
+
+This should work, as that servlet exists in the
+{jetty.base}/lib/goodbye.jar
+
+Configure the hello app to add an extra classpath that includes
+the goodbye.jar file
+
+
