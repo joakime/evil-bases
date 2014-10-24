@@ -1,0 +1,11 @@
+
+* pom.xml has compiler options commented out, you'll have to either uncomment and update project configuration or chose different jvm to run in eclipse
+
+* three content directories
+
+http://localhost:8111/test.txt 
+
+this file exists twice, only the one in dir0 will be served
+
+* exercise could be to insert GZIP to shrink
+
