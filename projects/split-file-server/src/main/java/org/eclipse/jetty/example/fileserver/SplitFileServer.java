@@ -45,7 +45,7 @@ public class SplitFileServer
         // started you can called connector.getLocalPort() to programmatically get the port the server started on.
         Server server = new Server();
         ServerConnector connector = new ServerConnector(server);
-        connector.setPort(8111);
+        connector.setPort(9090);
         server.setConnectors(new Connector[]
         { connector });
  
@@ -70,7 +70,7 @@ public class SplitFileServer
         ContextHandler context2 = new ContextHandler();
         context2.setContextPath("/");   
         ResourceHandler rh2 = new ResourceHandler();
-        rh1.setBaseResource( Resource.newResource(MavenTestingUtils.getTestResourceDir("dir2")));
+        rh2.setBaseResource( Resource.newResource(MavenTestingUtils.getTestResourceDir("dir2")));
         context2.setHandler(rh2);
  
         // Create a ContextHandlerCollection and set the context handlers to it. This will let jetty process urls
