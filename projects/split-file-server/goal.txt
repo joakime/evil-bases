@@ -1,0 +1,38 @@
+
+What you have
+-------------
+
+An eclipse project configured for
+ * 1 connector on port 9090
+ * 3 contexts, all on contextPath "/"
+   They will serve files (in a merged fashion)
+
+Goals
+-----
+
+Load / Import project into Eclipse.
+Run SplitFileServer.java as a java application in Eclipse.
+
+Verify that you can access the various files at
+
+http://localhost:9090/
+
+The /test.txt exists in 2 places.
+How would you adjust the embedded jetty server to see one version
+of this test.txt versus the other?
+
+The /monalisa.asc resource looks like html, but is being returned as
+text.  Modify SplitFileServer to add a mime-type for *.asc that will
+make the browser see it as HTML
+
+
+Bonus Goal
+----------
+
+Add GzipHandler to the tree to enforce Gzip compression for the
+following rules.
+
+ * Files over 10k
+ * No Gzip for image files
+
+

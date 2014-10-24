@@ -72,7 +72,7 @@ public class SplitFileServer
         ResourceHandler rh2 = new ResourceHandler();
         rh2.setBaseResource( Resource.newResource(MavenTestingUtils.getTestResourceDir("dir2")));
         context2.setHandler(rh2);
- 
+        
         // Create a ContextHandlerCollection and set the context handlers to it. This will let jetty process urls
         // against the declared contexts in order to match up content.
         ContextHandlerCollection contexts = new ContextHandlerCollection();
