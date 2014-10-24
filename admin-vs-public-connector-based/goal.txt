@@ -1,0 +1,37 @@
+
+What you have
+-------------
+
+A {jetty.base} configured for
+ * 2 connectors
+   + port 9090
+   + port 9099
+ * 2 webapps
+   + admin.war  on /admin
+   + public.war on /public
+
+Goals
+-----
+
+Make sure that /admin can only be accessed from
+
+http://localhost:9099/admin     (YES)
+
+and *NOT* from
+
+http://localhost:9090/admin     (BAD)
+
+Both connectors should be able to access /public
+
+http://localhost:9090/public
+http://localhost:9099/public
+
+
+Bonus Goal
+----------
+
+If a request arrives on path "/", auto-redirect to "/public"
+
+so that http://localhost:9090/  becomes  http://localhost:9090/public
+    and http://localhost:9099/  becomes  http://localhost:9099/public
+
