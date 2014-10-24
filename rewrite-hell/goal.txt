@@ -1,0 +1,49 @@
+
+What you have
+-------------
+
+A {jetty.base} configured for
+ * 2 connectors
+   + on port 9090 (the main connector)
+   + on port 9099 (the old connector)
+ * 4 webapp contexts
+   + / (aka ROOT)
+   + /hello
+   + /goodbye
+   + /old
+
+Goals
+-----
+
+There are a number of old and now outdated resources on this
+server configuration, but you have old clients and bookmarks
+that exist that will still use some of them.
+
+Configure the rewrite rules (and only the rewrite rules) for
+these requirements.
+
+1) All access to http://localhost:9099/ should goto
+   http://localhost:9090/
+   + this should result in a 302 redirect with a new Location (URL)
+   + this should preserve the path provided, such that if
+       http://localhost:9099/hello/stuff.hello
+     becomes a 302 redirect for
+       http://localhost:9090/hello/stuff.hello
+2) All requests to the context "/old/*" should goto "/hello" instead
+   This should be done with a 302 redirect for the new path.
+   + this should preserve the path provided.
+3) All requests to the context "/goodbye/*" should goto "/hello" instead
+   This should be done internally, and result in a hello message.
+   + NO 302 REDIRECT should happen.
+
+
+Bonus
+-----
+
+Copy the configuration from annotation-scanning-extraclasspath which
+adds the support for url patterns of "*.goodbye".
+
+Once you confirm that is working in this base, then make a regex
+based rule that will convert those requests (internally, with no 302
+redirect) to the "*.hello" equivalents
+
