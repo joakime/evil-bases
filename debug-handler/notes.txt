@@ -1,0 +1,9 @@
+
+java -jar ../start.jar --add-to-start=debug
+
+starting this base will fail, the logs directory does not exist
+
+can make the 'logs' dir and it will start fine
+
+(fixed this on master by adding [files] to the debug.mod)
+
